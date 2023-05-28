@@ -7,7 +7,12 @@ body {
 
 /* Navbar styles */
 .navbar {
-  background-color: #333;
+  background: rgb(50, 222, 132);
+  background: linear-gradient(
+    90deg,
+    rgba(50, 222, 132, 0.7204131652661064) 0%,
+    rgba(127, 255, 0, 0.7736344537815126) 73%
+  );
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -23,6 +28,7 @@ body {
 
 .navbar li {
   margin-right: 10px;
+  text-shadow: rgb(154, 152, 152) 1px 1px;
 }
 
 .navbar li:last-child {
@@ -41,7 +47,17 @@ body {
 
 /* Page content styles */
 .container {
-  max-width: 800px;
+  margin-top: 40px;
+  text-align: center;
+  background: rgb(50, 222, 132);
+  background: linear-gradient(
+    90deg,
+    rgba(50, 222, 132, 0.7204131652661064) 0%,
+    rgba(127, 255, 0, 0.7736344537815126) 73%
+  );
+  max-width: 500px;
+  max-height: 200px;
+  border-radius: 30px;
   margin: 20px auto;
   padding: 20px;
 }

@@ -30,9 +30,8 @@ function getDataDb(info) {
         return;
       }
 
-      examination(info, result);
-
-      // console.log("result:", result);
+      const ans = examination(info, result);
+      return ans;
     });
   });
 }

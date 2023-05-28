@@ -24,5 +24,5 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   const { phone, email, password } = req.body;
-  getDataDb({ phone, email, password, req, res });
+  getDataDb({ phone, email, password, res });
 });

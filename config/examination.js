@@ -1,16 +1,14 @@
 const examination = (info, base) => {
-  const { phone, email, password } = info;
+  const { phone, email, password, res } = info;
   const user = base.filter((user) => user.email == email)[0];
+  const emailDb = user.email;
+  const phoneDb = user.phone;
+  const passwordDb = user.password;
 
-  console.log(phone, email, password);
-  console.log(user.phone, user.email, user.password);
-
-  
-  const { phoneDb, emailDb, passwordDb } = user;
   if (phoneDb == phone && passwordDb == password && emailDb == email) {
-    return true;
+    res.render("home");
   } else {
-    return false;
+    res.render("index");
   }
 };
 

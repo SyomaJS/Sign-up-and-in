@@ -1,6 +1,6 @@
 // <___ main ___>
 const express = require("express");
-const { connectDatabase, getDataDb, useDb } = require("./config/db");
+const { getDataDb } = require("./config/db");
 require("dotenv").config();
 const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 3030;
@@ -23,10 +23,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  const { phone, emal, password } = req.body;
-  examination(phone, emal, password, req, res);
+  const { phone, email, password } = req.body;
+  getDataDb({ phone, email, password, req, res });
 });
-
-connectDatabase();
-useDb(DB_NAME);
-getDataDb();

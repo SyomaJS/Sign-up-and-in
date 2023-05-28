@@ -16,6 +16,7 @@ body {
 }
 
 .signin-form {
+  text-align: left;
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
@@ -56,4 +57,15 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+#signUp {
+  width: 30%;
+  background: rgb(50, 222, 132);
+  background: linear-gradient(
+    90deg,
+    rgba(50, 222, 132, 0.7204131652661064) 0%,
+    rgba(127, 255, 0, 0.7736344537815126) 73%
+  );
+  border: rgb(9, 101, 26) 2px solid;
 }

@@ -1,6 +1,8 @@
 // <___ main ___>
+console.clear();
 const express = require("express");
 const { getDataDb } = require("./config/db");
+const { addData } = require("./config/adDate");
 require("dotenv").config();
 const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 3030;
@@ -19,10 +21,19 @@ app.listen(PORT, () => {
 // </___ main ___>
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { res });
 });
 
 app.post("/", (req, res) => {
   const { phone, email, password } = req.body;
   getDataDb({ phone, email, password, res });
+});
+
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
+app.post("/signup", (req, res) => {
+  addData(req, res);
+  res.render("index");
 });

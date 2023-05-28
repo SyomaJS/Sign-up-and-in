@@ -1,5 +1,6 @@
 const mysql = require("mysql2");
 const { examination } = require("./examination");
+const { connectDb } = require("../helpers/connectDb");
 require("dotenv").config();
 
 function getDataDb(info) {
@@ -8,21 +9,9 @@ function getDataDb(info) {
   const PASSWORD = process.env.DB_PASSWORD || "QWERTY";
   const DATABASE = process.env.DB_NAME || "users";
 
-  const conn = mysql.createConnection({
-    host: HOST,
-    user: USER,
-    password: PASSWORD,
-    database: DATABASE,
-  });
+  const conn = connectDb();
 
   conn.connect((err) => {
-    if (err) {
-      console.error(err.message);
-      return;
-    }
-
-    console.log("Connected successfully...");
-
     let sql = "SELECT * FROM users";
     conn.query(sql, (err, result) => {
       if (err) {

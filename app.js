@@ -1,8 +1,8 @@
 // <___ main ___>
 console.clear();
 const express = require("express");
-const { getDataDb } = require("./config/db");
-const { addData } = require("./config/adDate");
+const { getDataDb } = require("./config/data_base");
+const { addData } = require("./config/add_data");
 require("dotenv").config();
 const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 3030;
@@ -21,7 +21,7 @@ app.listen(PORT, () => {
 // </___ main ___>
 
 app.get("/", (req, res) => {
-  res.render("index", { res });
+  res.render("index", {  });
 });
 
 app.post("/", (req, res) => {
